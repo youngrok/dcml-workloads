@@ -1,0 +1,42 @@
+(* LambdaCalc EBNF *)
+
+program      ::= expr ;
+
+expr         ::= letExpr ;
+
+letExpr      ::= "let" ident "=" expr "in" expr
+               | ifExpr ;
+
+ifExpr       ::= "if" expr "then" expr "else" expr
+               | funExpr ;
+
+funExpr      ::= "fn" ident "->" expr
+               | cmpExpr ;
+
+cmpExpr      ::= addExpr { cmpOp addExpr } ;
+
+addExpr      ::= mulExpr { addOp mulExpr } ;
+
+mulExpr      ::= appExpr { mulOp appExpr } ;
+
+appExpr      ::= atom { "(" expr ")" } ;          (* left-assoc application: f(x)(y) *)
+
+atom         ::= int
+               | bool
+               | ident
+               | "(" expr ")" ;
+
+cmpOp        ::= "==" | "!=" | "<" | "<=" | ">" | ">=" ;
+addOp        ::= "+" | "-" ;
+mulOp        ::= "*" | "/" ;
+
+bool         ::= "true" | "false" ;
+
+ident        ::= identStart { identCont } ;
+identStart   ::= "_" | letter ;
+identCont    ::= "_" | letter | digit ;
+
+int          ::= digit { digit } ;
+
+letter       ::= "A"…"Z" | "a"…"z" ;
+digit        ::= "0"…"9" ;
