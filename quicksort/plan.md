@@ -8,9 +8,7 @@ IMPORTANT INTERACTION RULE
 WORKSPACE INITIALIZATION (mandatory)
 - Before writing any code, you MUST reset the per-language workspace directory:
   - Target directory: `workloads/quicksort/{{LANGUAGE}}/`
-  - Delete ALL files/subdirectories currently inside it (if it exists), EXCEPT:
-    - Subdirectories whose names are digits (e.g., `1`, `2`, `3`) — keep these as run archives
-  - Do NOT delete run archive folders.
+  - Do not delete anything in the directory
 
 DEVELOPMENT ENVIRONMENT (mandatory)
 - Prefer using tools already installed on the current OS and available on PATH.
