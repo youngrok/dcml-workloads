@@ -6,9 +6,8 @@ IMPORTANT INTERACTION RULE
 - Treat the language name as the only variable; everything else is fixed by the repository files.
 
 WORKSPACE INITIALIZATION (mandatory)
-- Before writing any code, you MUST reset the per-language workspace directory:
+- If the per-language workspace directory does not exist, create it:
   - Target directory: `workloads/quicksort/{{LANGUAGE}}/`
-  - Do not delete anything in the directory
 
 DEVELOPMENT ENVIRONMENT (mandatory)
 - Prefer using tools already installed on the current OS and available on PATH.
@@ -19,6 +18,10 @@ DEVELOPMENT ENVIRONMENT (mandatory)
 
 TARGET LANGUAGE
 - Target language: {{LANGUAGE}}  (this will be provided by the user as the next message)
+
+WHAT YOU HAVE ACCESS TO (in this repo)
+- Test suite: `workloads/quicksort/tests/`
+- Test runner: `workloads/quicksort/runtest.py`
 
 TASK
 Implement a Quicksort executable that behaves like `sort`:
@@ -60,6 +63,7 @@ LOGGING (mandatory)
   - What you did (design decisions, alternatives considered, file changes)
   - Why you did it (link back to this spec)
   - The outcome (what now passes/fails, next action)
+  - If you have completed the task, append a final line `Task Complete.` to `log.md`.
 
 DELIVERABLES
 Produce:

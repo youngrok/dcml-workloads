@@ -6,9 +6,9 @@ IMPORTANT INTERACTION RULE
 - Treat the language name as the only variable; everything else is fixed by the repository files.
 
 WORKSPACE INITIALIZATION (mandatory)
-- Before writing any code, you MUST reset the per-language workspace directory:
+- If the per-language workspace directory does not exist, create it:
   - Target directory: `workloads/minilambda/{{LANGUAGE}}/`
-  - Do not delete anything in the directory
+- Work only in the language root directory above; do not create or use any numbered or archived subdirectories.
 
 DEVELOPMENT ENVIRONMENT (mandatory)
 - Prefer using tools already installed on the current OS and available on PATH.
@@ -76,6 +76,7 @@ LOGGING (mandatory)
   - What you did (design decisions, alternatives considered, file changes)
   - Why you did it (link back to `spec.md` / `grammer.ebnf` / failing tests)
   - The outcome (what now passes/fails, next action)
+- If you have completed the task, append a final line `Task Complete.` to `log.md`.
 - Keep the log concrete and diff-friendly (bullet points, short sections, links to relevant files/tests).
 
 DELIVERABLES

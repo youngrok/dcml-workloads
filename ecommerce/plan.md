@@ -6,9 +6,9 @@ IMPORTANT INTERACTION RULE
 - Treat the language name as the only variable; everything else is fixed by the repository files.
 
 WORKSPACE INITIALIZATION (mandatory)
-- Before writing any code, you MUST reset the per-language workspace directory:
+- If the per-language workspace directory does not exist, create it:
   - Target directory: `workloads/ecommerce/{{LANGUAGE}}/`
-  - Do not delete anything in the directory
+- Implement from scratch in the target directory; do not copy or reuse existing implementations from other runs or languages.
 
 DEVELOPMENT ENVIRONMENT (mandatory)
 - Prefer using tools already installed on the current OS and available on PATH.
@@ -119,6 +119,7 @@ LOGGING (mandatory)
   - What you did (design decisions, alternatives considered, file changes)
   - Why you did it (link back to policy/tests)
   - The outcome (what now passes/fails, next action)
+- If you have completed the task, append a final line `Task Complete.` to `log.md`.
 
 DELIVERABLES
 Produce:
@@ -126,6 +127,7 @@ Produce:
 2) Exact build instructions (one command, if possible).
 3) Exact run instructions compatible with:
    `python3 workloads/ecommerce/runtest.py <path-to-executable> workloads/ecommerce/tests`
+4) You must run the test suite and pass all tests before declaring completion.
 
 NOW WAIT FOR THE USER TO PROVIDE THE TARGET LANGUAGE NAME (ONLY).
 When you receive it, replace {{LANGUAGE}} and begin implementation immediately.
